@@ -5,7 +5,7 @@
 
   "Parameters": {
     "DBName": {
-      "Default": "MyDatabase",
+      "Default": "MyCarRds",
       "Description" : "The database name",
       "Type": "String",
       "MinLength": "1",
@@ -15,7 +15,7 @@
     },
 
     "DBUser": {
-      "NoEcho": "true",
+      "Default": "dbadmin1",
       "Description" : "The database admin account username",
       "Type": "String",
       "MinLength": "1",
@@ -41,9 +41,9 @@
       "Properties" : {
         "DBName" : { "Ref" : "DBName" },
         "AllocatedStorage" : "5",
-        "DBInstanceClass" : "db.m1.small",
+        "DBInstanceClass" : "db.t1.micro",
         "Engine" : "MySQL",
-        "EngineVersion" : "5.6.19",
+        "EngineVersion" : "5.6.23",
         "MasterUsername" : { "Ref" : "DBUser" },
         "MasterUserPassword" : { "Ref" : "DBPassword" },
         "DBParameterGroupName" : { "Ref" : "MyRDSParamGroup" }
